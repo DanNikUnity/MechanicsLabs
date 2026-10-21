@@ -52,6 +52,9 @@ namespace Mechanics
 
             HandleWallCollisions();
 
+            // The serialized scene may contain fewer than two balls.
+            // Movement and wall response still work; pair response needs both entries.
+            if (_balls.Length >= 2)
             {
                 var b1 = _balls[0];
                 var b2 = _balls[1];
